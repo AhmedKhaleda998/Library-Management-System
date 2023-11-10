@@ -44,7 +44,7 @@ app.use(errors.get404);
 
 // Connect to database and start the server
 sequelize.sync().then(() => {
-    app.listen(process.env.PORT || 5200, () => {
+    app.listen(process.env.PORT || 3000, () => {
         console.log(`App Running!`);
     });
 });
