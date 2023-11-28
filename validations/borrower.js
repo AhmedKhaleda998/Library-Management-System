@@ -16,7 +16,7 @@ exports.isBorrower = () => {
         body('email').custom(async (email) => {
             const existingBorrower = await Borrower.findOne({ where: { email } });
             if (existingBorrower) {
-                throw new Error('Borrower with the same email already exists');
+                throw new Error('Email already exists');
             }
             return true;
         }),

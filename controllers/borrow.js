@@ -18,9 +18,9 @@ exports.viewLastMonth = async (req, res) => {
 
         res.status(200).json({ message: 'Fetching all borrow processes last month', borrows });
     }
-    catch (error) {
-        console.error('Error fetching all borrow processes last month:', error);
-        res.status(500).json({ message: 'Internal server error' });
+    catch (err) {
+        console.log(err);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 };
 
@@ -34,9 +34,9 @@ exports.allBorrowedBooks = async (req, res) => {
         });
 
         res.status(200).json({ message: 'Fetching all borrowed books', borrows });
-    } catch (error) {
-        console.error('Error fetching all borrowed books:', error);
-        res.status(500).json({ message: 'Internal server error' });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 };
 
@@ -75,7 +75,7 @@ exports.dueBooksLastMonth = async (req, res) => {
 
         res.status(200).json({ message: 'All due books last month', borrows });
     } catch (err) {
-        console.error(err);
+        console.log(err);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
@@ -103,7 +103,7 @@ exports.dueBooks = async (req, res) => {
 
         res.status(200).json({ message: 'All due books', borrows });
     } catch (err) {
-        console.error(err);
+        console.log(err);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
